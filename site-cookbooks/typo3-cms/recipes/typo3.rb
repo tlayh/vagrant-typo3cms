@@ -64,3 +64,4 @@ end
 #	group 'www-data'
 #end
 
+include_recipe "typo3-cms::phpunit"
