@@ -6,7 +6,9 @@ Copyright 2013, Thomas Layh <thomas@layh.com>
 Description:
 --------------
 
-Will install a TYPO3Flow Welcome package including all required setups for the server environment.
+Will install TYPO3 CMS with the current master of 6.x.
+
+After installation you have to run the 1-2-3 Install tool and then you are ready to go.
 
 
 Installation:
