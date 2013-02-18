@@ -51,16 +51,16 @@ execute ' create symlink typo3 ' do
 end
 
 # create database
-execute 'create database' do
-	command 'mysqladmin -uroot -proot -hlocalhost create typo3cms'
-end
+#execute 'create database' do
+#	command 'mysqladmin -uroot -proot -hlocalhost create typo3cms'
+#end
 
 # copy prepared LocalConfiguration
 # setup host
-cookbook_file '/var/www/typo3.cms/htdocs/typo3conf/LocalConfiguration.php' do
-	source "LocalConfiguration.php"
-	mode 0755
-	user 'vagrant'
-	group 'www-data'
-end
+#cookbook_file '/var/www/typo3.cms/htdocs/typo3conf/LocalConfiguration.php' do
+#	source "LocalConfiguration.php"
+#	mode 0755
+#	user 'vagrant'
+#	group 'www-data'
+#end
 
