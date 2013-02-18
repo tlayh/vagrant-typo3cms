@@ -1,0 +1,18 @@
+<VirtualHost *:80>
+
+	ServerAdmin typo3cms@localhost.de
+	ServerName typo3.cms
+
+	DocumentRoot /var/www/typo3.cms/htdocs/
+
+	<Directory /var/www/typo3.cms>
+
+		Options FollowSymLinks
+		AllowOverride All
+
+		<Ifmodule mod_php5.c>
+			php_admin_value memory_limit 256M
+		</Ifmodule>
+
+	</Directory>
+</VirtualHost>
