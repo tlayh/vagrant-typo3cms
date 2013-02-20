@@ -24,7 +24,7 @@ Installation:
 	librarian-chef install
 
 4. Add to your host file
-	192.168.23.3 typo3.cms
+	192.168.23.6 typo3.cms
 
 5. Run "vagrant up"
 
