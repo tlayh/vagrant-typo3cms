@@ -36,13 +36,6 @@ execute 'create symlink index.php' do
 	group 'www-data'
 end
 
-# create symlink t3lib
-execute 'create symlink t3lib' do
-	command 'cd /var/www/typo3.cms/htdocs && ln -s ../t3lib t3lib'
-	user 'vagrant'
-	group 'www-data'
-end
-
 # create symlink typo3
 execute ' create symlink typo3 ' do
 	command ' cd /var/www/typo3.cms/htdocs && ln -s ../typo3 typo3'
