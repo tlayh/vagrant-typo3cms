@@ -1,4 +1,4 @@
-TYPO3Flow Vagrant Box
+TYPO3 CMS Vagrant Box
 ==============================
 
 Copyright 2013, Thomas Layh <thomas@layh.com>
