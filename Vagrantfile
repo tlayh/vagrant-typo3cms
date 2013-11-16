@@ -7,7 +7,7 @@ Vagrant.configure("2") do |config|
 
 	config.ssh.forward_agent = true
 
-	config.vm.network :private_network, ip: "192.168.23.4"
+	config.vm.network :private_network, ip: "192.168.23.6"
 
 	config.vm.provision :chef_solo do |chef|
 		chef.cookbooks_path = [ "cookbooks", "site-cookbooks" ]
