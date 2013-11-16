@@ -19,7 +19,7 @@ Vagrant.configure("2") do |config|
 	end
 
 	config.vm.provider "virtualbox" do |v|
-		v.name = "TYPO3 Neos"
+		v.name = "TYPO3 CMS"
 		v.customize ["modifyvm", :id, "--memory", "2048"]
 	end
 end
