@@ -34,16 +34,18 @@ cookbook_file "/etc/php5/conf.d/php_dateTimeZone.ini" do
 	source "php_dateTimeZone.ini"
 	mode 0655
 end
-execute "restart apache" do
-	command "/etc/init.d/apache2 reload"
-end
 
 # enable host and disable default host
-apache_site "default" do
-	enable false
-end
+#apache_site "default" do
+#	enable false
+#end
 apache_site "typo3.cms" do
 	enable true
+end
+
+# reload apache
+execute "reload apache" do
+	command "/etc/init.d/apache2 reload"
 end
 
 include_recipe "typo3-cms::typo3"
