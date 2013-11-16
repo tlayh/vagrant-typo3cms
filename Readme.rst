@@ -22,6 +22,7 @@ Installation:
 
 3. Install required cookbooks
 	librarian-chef install
+	vagrant plugin install vagrant-vbguest
 
 4. Add to your host file
 	192.168.23.6 typo3.cms
