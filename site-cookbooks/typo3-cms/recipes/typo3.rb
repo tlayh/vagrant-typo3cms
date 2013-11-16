@@ -14,7 +14,7 @@
 
 # clone the TYPO3 Core
 execute 'clone typo3' do
-	command 'git clone --recursive git://git.typo3.org/TYPO3v4/Core.git /var/www/typo3.cms'
+	command 'git clone --recursive git://git.typo3.org/Packages/TYPO3.CMS.git /var/www/typo3.cms'
 	creates '/var/www/typo3.cms'
 end
 

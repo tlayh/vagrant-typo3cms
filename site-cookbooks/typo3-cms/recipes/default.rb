@@ -9,7 +9,7 @@
 # prepare everything to install typo3
 
 
-include_recipe "apache2"
+include_recipe 'apache2'
 ['rewrite', 'deflate', 'php5', 'headers', 'expires', 'status', 'negotiation', 'setenvif'].each do |mod|
 	include_recipe "apache2::mod_#{mod}"
 end
@@ -19,9 +19,9 @@ include_recipe "php::package"
 	include_recipe "php::module_#{mod}"
 end
 
+include_recipe "typo3-cms::basic"
 include_recipe "mysql::server"
 include_recipe "git"
-include_recipe "typo3-cms::basic"
 
 # setup host
 cookbook_file "/etc/apache2/sites-available/typo3.cms" do
@@ -39,7 +39,7 @@ execute "restart apache" do
 end
 
 # enable host and disable default host
-apache_site "000-default" do
+apache_site "default" do
 	enable false
 end
 apache_site "typo3.cms" do
