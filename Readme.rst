@@ -22,7 +22,7 @@ Installation:
 2. Install required cookbooks
 ::
     vagrant plugin install vagrant-vbguest
-    vagrant-librarian-chef
+    vagrant plugin install vagrant-librarian-chef
 
 3. Add to your host file
 ::
