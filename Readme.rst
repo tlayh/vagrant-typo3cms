@@ -23,6 +23,7 @@ Installation:
 ::
     vagrant plugin install vagrant-vbguest
     vagrant plugin install vagrant-librarian-chef
+    librarian-chef install
 
 3. Add to your host file
 ::
