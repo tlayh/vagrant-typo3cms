@@ -14,22 +14,23 @@ After installation you have to run the 1-2-3 Install tool and then you are ready
 Installation:
 --------------
 
-1. Setup Ruby and RubyGems on your system.
+*Tested with Vagrant 1.3.5 and VirtualBox 4.3.2*
 
-2. Install Vagrant and Librarian
-	gem install vagrant
-	gem install librarian
+1. Download the Vagrant installer from:
+    http://downloads.vagrantup.com/
 
-3. Install required cookbooks
-	librarian-chef install
-	vagrant plugin install vagrant-vbguest
+2. Install required cookbooks
+::
+    vagrant plugin install vagrant-vbguest
+    vagrant-librarian-chef
 
-4. Add to your host file
-	192.168.23.6 typo3.cms
+3. Add to your host file
+::
+    192.168.23.6 typo3.cms
 
-5. Run "vagrant up"
+4. Run "vagrant up"
 
-6. Call the page http://typo3.cms and complete the setup using the 1-2-3 Install Tool
+5. Call the page http://typo3.cms and complete the setup using the 1-2-3 Install Tool
 -> Username and Passwort for the database: root / root
 
-7. Shutdown with "vagrant suspend" and restart with "vagrant resume"
+6. Shutdown with "vagrant suspend" and restart with "vagrant resume"
