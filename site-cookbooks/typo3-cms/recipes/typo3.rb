@@ -14,8 +14,8 @@
 
 # clone the TYPO3 Core
 execute 'clone typo3' do
-	command 'git clone --recursive git://git.typo3.org/Packages/TYPO3.CMS.git /var/www/typo3.cms'
-	creates '/var/www/typo3.cms'
+	command 'git clone --recursive git://git.typo3.org/Packages/TYPO3.CMS.git /var/www/typo3.cms/typo3_src'
+	creates '/var/www/typo3.cms/typo3_src'
 end
 
 # clone the Introduction package
@@ -29,16 +29,23 @@ execute 'fix permissions' do
 	command 'cd /var/www && chmod gu+w typo3.cms -R && chown vagrant:www-data typo3.cms -R'
 end
 
+# create symlink typo3_src
+execute 'create symlink typo3_src' do
+	command '[ -e /var/www/typo3.cms/htdocs/typo3_src ] && unlink /var/www/typo3.cms/htdocs/typo3_src; cd /var/www/typo3.cms/htdocs && ln -s ../typo3_src typo3_src'
+	user 'vagrant'
+	group 'www-data'
+end
+
 # create symlink index.php
 execute 'create symlink index.php' do
-	command 'cd /var/www/typo3.cms/htdocs && ln -s ../index.php index.php'
+	command '[ -e /var/www/typo3.cms/htdocs/index.php ] && unlink /var/www/typo3.cms/htdocs/index.php; cd /var/www/typo3.cms/htdocs && ln -s typo3_src/index.php index.php'
 	user 'vagrant'
 	group 'www-data'
 end
 
 # create symlink typo3
 execute ' create symlink typo3 ' do
-	command ' cd /var/www/typo3.cms/htdocs && ln -s ../typo3 typo3'
+	command '[ -e /var/www/typo3.cms/htdocs/typo3 ] && unlink /var/www/typo3.cms/htdocs/typo3; cd /var/www/typo3.cms/htdocs && ln -s typo3_src/typo3 typo3'
 	user 'vagrant'
 	group 'www-data'
 end
