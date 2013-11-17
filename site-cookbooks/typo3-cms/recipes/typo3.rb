@@ -31,21 +31,21 @@ end
 
 # create symlink typo3_src
 execute 'create symlink typo3_src' do
-	command 'cd /var/www/typo3.cms/htdocs && ln -s ../typo3_src typo3_src'
+	command '[ -e /var/www/typo3.cms/htdocs/typo3_src ] && unlink /var/www/typo3.cms/htdocs/typo3_src; cd /var/www/typo3.cms/htdocs && ln -s ../typo3_src typo3_src'
 	user 'vagrant'
 	group 'www-data'
 end
 
 # create symlink index.php
 execute 'create symlink index.php' do
-	command 'cd /var/www/typo3.cms/htdocs && ln -s typo3_src/index.php index.php'
+	command '[ -e /var/www/typo3.cms/htdocs/index.php ] && unlink /var/www/typo3.cms/htdocs/index.php; cd /var/www/typo3.cms/htdocs && ln -s typo3_src/index.php index.php'
 	user 'vagrant'
 	group 'www-data'
 end
 
 # create symlink typo3
 execute ' create symlink typo3 ' do
-	command ' cd /var/www/typo3.cms/htdocs && ln -s typo3_src/typo3 typo3'
+	command '[ -e /var/www/typo3.cms/htdocs/typo3 ] && unlink /var/www/typo3.cms/htdocs/typo3; cd /var/www/typo3.cms/htdocs && ln -s typo3_src/typo3 typo3'
 	user 'vagrant'
 	group 'www-data'
 end
