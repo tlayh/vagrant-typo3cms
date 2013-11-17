@@ -30,15 +30,16 @@ cookbook_file "/etc/apache2/sites-available/typo3.cms" do
 end
 
 # prepare php.ini config
-cookbook_file "/etc/php5/conf.d/php_dateTimeZone.ini" do
-	source "php_dateTimeZone.ini"
+cookbook_file '/etc/php5/conf.d/php_dateTimeZone.ini' do
+	source 'php_dateTimeZone.ini'
+	mode 0655
+end
+cookbook_file '/etc/php5/conf.d/php_extraSettings.ini' do
+	source 'php_extraSettings.ini'
 	mode 0655
 end
 
 # enable host and disable default host
-#apache_site "default" do
-#	enable false
-#end
 apache_site "typo3.cms" do
 	enable true
 end
