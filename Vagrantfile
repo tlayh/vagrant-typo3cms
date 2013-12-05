@@ -21,5 +21,7 @@ Vagrant.configure("2") do |config|
 	config.vm.provider "virtualbox" do |v|
 		v.name = "TYPO3 CMS"
 		v.customize ["modifyvm", :id, "--memory", "2048"]
+		v.customize ["modifyvm", :id, "--natdnshostresolver1", "on"]
+		v.customize ["modifyvm", :id, "--natdnsproxy1", "on"]
 	end
 end
